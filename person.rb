@@ -1,15 +1,15 @@
-require_relative 'nameable'
+require'./nameable'
 
 class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
   def initialize(id, age, name = 'Unknown', parent_permission: true)
+    super()
     @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
-    super
   end
 
   def can_use_services?
